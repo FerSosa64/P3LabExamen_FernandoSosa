@@ -40,14 +40,14 @@ void Red::funcion() {
 		if (comand[0] == 'p' && comand[3] == 'g') {
 			string num = "";
 			for (int k = 0; k < comand.size(); k++) {
-				if (comand[k] == 'p' || comand[k] == 'i' || comand[k] == 'n' || comand[k] == 'g' || comand[k] == '_' || comand[k] == '<' || comand[k] == '>') {
+				if (comand[k] == 'p' || comand[k] == 'i' || comand[k] == 'n' || comand[k] == 'g' || comand[k] == '_') {
 					
 				}
 				else {
 					num = num + comand[k];
 				}
 			}
-			pc[pos]->ping(num);
+			
 			bool exist = false;
 			for (int p = 0; p < this->pc.size(); p++) {
 				if (this->pc[p]->getIP() == num) {
@@ -55,17 +55,44 @@ void Red::funcion() {
 				}
 			}
 			if (exist) {
-				this->pc[pos]->ping(num);
+				if (this->pc[pos]->ping(num) == this->pc[pos]->ping(this->pc[pos]->getIP())) {
+					cout << endl;
+					cout << "Pinging to " << num << " with 32 types if data" << endl;
+					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
+					cout << endl;
+					cout << "Ping statistics for " << num << ":" << endl;
+					cout << "	Packets:  Sent: 4, Received: 4, Lost: 0 (0% lost)" << endl;
+					cout << endl;
+				}
+				else {
+					cout << endl;
+					cout << "Pinging to " << num << " with 32 types if data" << endl;
+					cout << "Reply from " << num << ": Destination host unreachable" << endl;
+					cout << "Reply from " << num << ": Destination host unreachable" << endl;
+					cout << "Reply from " << num << ": Destination host unreachable" << endl;
+					cout << "Reply from " << num << ": Destination host unreachable" << endl;
+					cout << endl;
+					cout << "Ping statistics for " << num << ":" << endl;
+					cout << "	Packets:  Sent: 4, Received: 4, Lost: 0 (0% lost)" << endl;
+					cout << endl;
+				}
+				
+
 			}
 			else {
+				cout << endl;
 				cout << "Pinging to " << num << " with 32 types if data" << endl;
 				cout << "Request timed out."<< endl;
 				cout << "Request timed out." << endl;
 				cout << "Request timed out." << endl;
 				cout << "Request timed out." << endl;
-
+				cout << endl;
 				cout << "Ping statistics for " << num << ":" << endl;
-				cout << "	Packets sent: 4, Received: 0, Lost: 4 (100% lost)" <<endl;
+				cout << "	Packets:  Sent: 4, Received: 0, Lost: 4 (100% lost)" <<endl;
+				cout << endl;
 			}
 		}
 	}

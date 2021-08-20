@@ -16,7 +16,7 @@ public:
 	void setIP(string);
 	void setmask(string);
 	void show();
-	void ping(string);
+	string ping(string);
 	void exit();
 };
 
