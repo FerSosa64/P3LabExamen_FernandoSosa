@@ -58,10 +58,10 @@ void Red::funcion() {
 				if (this->pc[pos]->ping(num) == this->pc[pos]->ping(this->pc[pos]->getIP())) {
 					cout << endl;
 					cout << "Pinging to " << num << " with 32 types if data" << endl;
-					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
-					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
-					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
-					cout << "Reply from " << num << ": bytes=32 time37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time=37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time=37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time=37ms TTL=46" << endl;
+					cout << "Reply from " << num << ": bytes=32 time=37ms TTL=46" << endl;
 					cout << endl;
 					cout << "Ping statistics for " << num << ":" << endl;
 					cout << "	Packets:  Sent: 4, Received: 4, Lost: 0 (0% lost)" << endl;
